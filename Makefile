@@ -1,5 +1,5 @@
 
-PROJ=test
+PROJ=blinky
 
 CFLAGS=-Wall -Wextra -Wimplicit-function-declaration -Wredundant-decls -Wstrict-prototypes -Wundef -Wshadow -g -fno-common -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -MD
 LDFLAGS=--static -lc -lnosys -T stm32.ld -nostartfiles -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -lm -Wl,-Map=$(PROJ).map
@@ -17,5 +17,5 @@ $(PROJ).bin: $(PROJ).elf
 	$(OBJCOPY) -Obinary $(PROJ).elf $(PROJ).bin
 
 $(PROJ).elf: $(OBJS)
-	$(CC) -o test.elf $(OBJS) $(TGTTYPE).a $(LDFLAGS)
+	$(CC) -o $(PROJ).elf $(OBJS) $(TGTTYPE).a $(LDFLAGS)
 
