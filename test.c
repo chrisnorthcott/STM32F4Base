@@ -1,6 +1,23 @@
+extern void setup(void);
+extern void loop(void);
+
+void setup()
+{
+
+}
+
+void loop()
+{
+	__asm("nop");
+}
+
+/* Arduino-like Setup/Loop structure */
+
 int main(void)
 {
-	do{
-		__asm__("nop");
-	}while(1);
+	setup();
+	while(1)
+	{
+		loop();
+	}
 }
