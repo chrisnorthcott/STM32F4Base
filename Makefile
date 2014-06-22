@@ -1,5 +1,5 @@
 
-PROJ=test
+PROJ=blinky
 
 CFLAGS=-DSTM32F4 -I./ocm-includes -Wall -Wextra -Wimplicit-function-declaration -Wredundant-decls -Wstrict-prototypes -Wundef -Wshadow -g -fno-common -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -MD
 LDFLAGS=--static -L./ocm-libs -lc -lnosys -T stm32.ld -nostartfiles -Wl,--gc-sections -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -lm -Wl,-Map=$(PROJ).map
